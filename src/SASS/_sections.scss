@@ -21,10 +21,10 @@
 
 }
 
-
 // FORM SECTION
 .form {
     margin-top: 140px;
+    padding: 0 1rem;
 
     h1 {
         margin-bottom: 50px;
@@ -33,7 +33,7 @@
     @include flexCC(column);
 
     form {
-        width: 380px;
+        width: 100%;
 
         .input-container {
             position: relative;
@@ -140,8 +140,6 @@
     }
 }
 
-
-
 // SUCCESSFUL REGISTRATION SECTION
 
 .success {
@@ -176,7 +174,16 @@
 }
 
 
-@include for-small-phones-only {}
+@include for-small-phones-only {
+
+    // FORM SECTION
+    .form {
+        h1 {
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+    }
+}
 
 @include for-tablet-potrait-up {
     .users {
@@ -185,6 +192,13 @@
         &-grid {
             grid-template-columns: repeat(2, 1fr);
             margin-top: 50px;
+        }
+    }
+
+    // FORM SECTION
+    .form {
+        form {
+            width: 380px;
         }
     }
 }
