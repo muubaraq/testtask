@@ -1,0 +1,28 @@
+@import "./variables";
+@import "./responsiveness";
+@import "./general";
+@import "./components";
+@import "./navbar";
+@import "./header";
+@import "./sections";
+
+
+
+@include for-small-phones-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .header {
+        background-position: center;
+    }
+}
+
+@include for-big-desktop-up {
+    .App {
+        max-width: 1170px;
+        margin: auto;
+    }
+}

@@ -1,0 +1,18 @@
+$backgroundColor: #E5E5E5;
+$primaryColor: #F4E041;
+$secondaryColor: #00BDD3;
+$white: #FFFFFF;
+
+
+@mixin flexCC ($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flexCB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

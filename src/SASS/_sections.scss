@@ -1,0 +1,239 @@
+// USERS SECTION
+.users {
+    margin-top: 120px;
+    padding: 0 16px;
+
+    h1 {
+        text-align: center;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 16px;
+        margin: 50px 0;
+    }
+
+    &-btn {
+        @include flexCC (column);
+
+    }
+
+}
+
+
+// FORM SECTION
+.form {
+    margin-top: 140px;
+
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    @include flexCC(column);
+
+    form {
+        width: 380px;
+
+        .input-container {
+            position: relative;
+            width: 100%;
+            height: 54px;
+            margin: 50px 0;
+
+
+            .input:focus+.label {
+                top: -10px;
+                left: 12px;
+                z-index: 10;
+
+            }
+
+            .input:not(:placeholder-shown)+.label {
+                top: -10px;
+                left: 12px;
+                z-index: 10;
+            }
+
+
+            .label {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                padding: 0 4px;
+                color: #7E7E7E;
+                background: $backgroundColor;
+                transition: 0.5s;
+                z-index: 0;
+            }
+
+            .phone-example {
+                position: absolute;
+                top: 60px;
+                color: #7E7E7E;
+                margin-left: 15px;
+            }
+        }
+
+        .position {
+
+            &-container {
+                display: flex;
+                align-items: center;
+                margin: 13px 0;
+
+                input {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 12px;
+                }
+
+            }
+        }
+
+        .img-upload {
+            height: 54px;
+            width: 100%;
+            border: 1px solid #D0CFCF;
+            margin-top: 40px;
+
+            #upload-border {
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+            }
+
+            #upload-name {
+                height: 100%;
+                border: none;
+                margin-left: 10px;
+
+            }
+
+            #upload-button {
+                height: 100%;
+                padding: 0 20px;
+                background: none;
+                color: rgba(0, 0, 0, 0.87);
+                cursor: pointer;
+                border: 1px solid rgba(0, 0, 0, 0.87);
+                border-radius: 4px 0px 0px 4px;
+            }
+
+            #upload-name:focus,
+            #upload-button:focus {
+                outline: none;
+            }
+
+            .d-none {
+                display: none;
+            }
+
+        }
+
+        .submit-btn {
+            margin: 50px 0 100px 0;
+            @include flexCC(row);
+        }
+
+
+    }
+}
+
+
+
+// SUCCESSFUL REGISTRATION SECTION
+
+.success {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    text-align: center;
+
+    .header-btn {
+        width: 100%;
+        @include flexCB;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        padding: 0 1rem;
+
+
+        .icon {
+            color: #CB3D40;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .image-container {
+        width: 328px;
+        height: 290px;
+        margin: auto;
+    }
+}
+
+
+@include for-small-phones-only {}
+
+@include for-tablet-potrait-up {
+    .users {
+        padding: 0 32px;
+
+        &-grid {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 50px;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .users {
+        padding: 0 60px;
+
+        &-grid {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 50px;
+        }
+    }
+
+    .success {
+        .header-btn {
+            width: 70%;
+            float: right;
+            padding: 0;
+
+            .icon {
+                margin-right: 16px;
+                font-size: 30px;
+            }
+        }
+    }
+
+
+}
+
+@include for-big-desktop-up {
+    .users {
+        padding: 0;
+    }
+
+    .success {
+
+
+        .header-btn {
+            margin-top: 30px;
+            margin-bottom: 300px;
+
+        }
+
+        .image-container {
+            width: 528px;
+            height: 590px;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+// Buttons used throughout the whole project
+.btn {
+    width: 100px;
+    height: 34px;
+    background: $primaryColor;
+    border-radius: 80px;
+    border: none;
+    cursor: pointer;
+
+    &.inactive {
+        background: #B4B4B4;
+        color: $white;
+    }
+}
+
+// Card component found in the Users section
+.card {
+    min-height: 254px;
+    background: $white;
+    border-radius: 10px;
+    padding: 20px;
+
+    .user {
+        @include flexCC(column);
+        text-align: center;
+
+        &-img {
+            height: 70px;
+            width: 70px;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        &-email {
+            text-align: center;
+            word-wrap: break-word;
+            width: 100%;
+        }
+
+
+        &-name {
+            margin: 20px 0;
+        }
+
+
+    }
+
+}
+
+// INPUT COMPONENT FOUND IN THE FORM SECTION
+
+.input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #D0CFCF;
+    border-radius: 4px;
+    background: transparent;
+    padding: 16px;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &.red {
+        border: 1px solid #CB3D40;
+    }
+
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $backgroundColor inset !important;
+}
+
+// PRELOADER COMPONENT
+.preloader {
+    width: 50px;
+    height: 50px;
+    margin: 30px auto;
+
+    img {
+        animation: spinner 1s linear infinite;
+
+    }
+
+}
+
+.reg-preloader {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+
+    img {
+
+        animation: spinner 1s linear infinite;
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+
+
+@include for-small-phones-only {
+    .btn {
+        width: 80px;
+    }
+}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .card {
+        width: 390px;
+    }
+}
+
+@include for-big-desktop-up {}

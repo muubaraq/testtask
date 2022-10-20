@@ -1,0 +1,42 @@
+.nav {
+    @include flexCB;
+    background: $white;
+    padding: 17px 16px;
+
+    &-logo {
+        height: 30px;
+    }
+
+    &-items {
+        @include flexCB;
+
+        li {
+            &:first-child {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+@include for-small-phones-only {
+    .nav {
+        padding: 17px 8px;
+    }
+}
+
+@include for-tablet-potrait-up {
+    .nav {
+        padding: 17px 32px;
+    }
+}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .nav {
+        padding: 17px 60px;
+    }
+}
+
+@include for-big-desktop-up {}
